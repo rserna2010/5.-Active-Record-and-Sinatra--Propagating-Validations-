@@ -1,0 +1,30 @@
+<h1>Create an event below</h1>
+<table>
+<form action="/events/create" method="post">
+  <tr><td><input type="text" name="organizer_name" placeholder="Organizer Name" value="<%= @name %>"> 
+    <% if @failed_creation_message %>
+    <%= @failed_creation_message[:organizer_name][0] if @failed_creation_message[:organizer_name] %> 
+    <% end %>
+  </tr><td>
+  
+  <tr><td><input type="text" name="organizer_email" placeholder="Organizer Email" value="<%= @email %>"> 
+    <% if @failed_creation_message %>
+    <%= @failed_creation_message[:organizer_email][0] if @failed_creation_message[:organizer_email] %> 
+    <% end %>
+  </tr><td>
+  
+  <tr><td><input type="text" name="title" placeholder="Event Title" value="<%= @title%>">
+    <% if @failed_creation_message %>
+    <%= @failed_creation_message[:title][0] if @failed_creation_message[:title] %> 
+    <% end %>
+  </tr><td>
+  
+  <tr><td><input type="date" name="date" value="<%= @date %>" > 
+    <% if @failed_creation_message %>
+    <%= @failed_creation_message[:date][0] if @failed_creation_message[:date] %> 
+    <% end %>
+  </tr><td>
+  
+  <tr><td><input type="submit"></tr><td>
+</form>
+</table>
